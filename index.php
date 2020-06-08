@@ -43,7 +43,7 @@
             echo 'Negalimas veiksmas';
         }
     } else {
-        echo '0';
+        echo 'Negalimas veiksmas';
     }
     echo '<br/>';
     echo "<br/>";
@@ -72,8 +72,7 @@
     $b = rand(1, 10);
     $c = rand(1, 10);
 
-    echo "$a $b $c";
-    // echo "<br/>";
+    echo "$a, $b, $c";
     if ($a == $b || $a == $c) {
         echo ' | <b>Negalima</b>';
     } else if ($b == $c || $b == $a) {
@@ -83,6 +82,63 @@
     } else {
         echo ' | <b>Galima</b>';
     }
+    echo "<br/>";
+    echo "<br/>";
+
+    # 5. Task ##############
+
+    echo '<b>5. </b>';
+    $a = rand(0, 2);
+    $b = rand(0, 2);
+    $c = rand(0, 2);
+    $d = rand(0, 2);
+    $nulis = 0;
+    $vienas = 0;
+    $du = 0;
+
+    echo "$a, $b, $c, $d";
+
+
+    if ($a == 0) {
+        $nulis++;
+    } else if ($a == 1) {
+        $vienas++;
+    } else {
+        $du++;
+    }
+    if ($b == 0) {
+        $nulis++;
+    } else if ($b == 1) {
+        $vienas++;
+    } else {
+        $du++;
+    }
+    if ($c == 0) {
+        $nulis++;
+    } else if ($c == 1) {
+        $vienas++;
+    } else {
+        $du++;
+    }
+    if ($d == 0) {
+        $nulis++;
+    } else if ($d == 1) {
+        $vienas++;
+    } else {
+        $du++;
+    }
+
+    echo "<br/>";
+    echo "Nulis: $nulis<br/>";
+    echo "Vienas: $vienas<br/>";
+    echo "Du: $du<br/>";
+
+    echo "<br/>";
+    echo "<br/>";
+
+    # 6. Task ##############
+
+    echo '<b>6. </b>';
 
 
 
