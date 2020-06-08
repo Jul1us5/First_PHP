@@ -10,7 +10,7 @@
 <body>
     <?php
 
-    # 1. Task
+    # 1. Task ##############
     $vardas = 'Julius';
     $pavarde = 'Pavardenis';
     $gimimoMetai = '1993';
@@ -20,20 +20,11 @@
     echo '<b>1. </b>';
     echo "Aš esu $vardas $pavarde. Man yra $kiek metai(ų)<br/>";
 
-    # 2. Task
+    # 2. Task ##############
     $pirmas = rand(0, 4);
     $antras = rand(0, 4);
 
     echo '<b>2. </b>';
-    // if($pirmas > $antras) {
-    //     $sum = $pirmas / $antras;
-    //     $round = round($sum, 2);
-    //     echo "$round";
-    // } else if($pirmas < $antras) {
-    //     $sum = $antras / $pirmas;
-    //     $round = round($sum, 2);
-    //     echo "$round";
-    // }
     if ($pirmas > $antras) {
         if ($pirmas != 0 && $antras != 0) {
             $sum = $pirmas / $antras;
