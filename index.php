@@ -10,8 +10,16 @@
 <body>
     <?php
 
+    # 1. Task
+    $vardas = 'Julius';
+    $pavarde = 'Pavardenis';
+    $gimimoMetai = '1993';
+    $metai = '2020';
+    $kiek = $metai - $gimimoMetai;
 
-    echo "My first PHP script!";
+    echo '<b>1. </b>';
+    echo "Aš esu $vardas $pavarde. Man yra $kiek metai(ų)<br/>";
+
 
 
 
