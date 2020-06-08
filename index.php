@@ -248,20 +248,26 @@
     $min = rand(1, 59);
     $sek = rand(1, 59);
     $add = rand(0, 300);
+    $laikrodis = sprintf('%02d : %02d : %02d', $val, $min, $sek);
 
-    if ($val < 10) {
-        $val = "0$val";
-    } 
-    if($min < 10) {
-        $min = "0$min";
-    }
-    if($sek < 10) {
-        $sek = "0$sek";
-    }
-
-    echo "<b>Laikrodis: </b>$val : $min : $sek"; 
+    echo "<b>Laikrodis: </b>$laikrodis";
     echo "<br/>";
-    echo "Plius: $add";
+    echo "Plius: +$add sek."; // Gautos sekundes nuo 0 iki 300
+    echo "<br/>";
+
+    // Viską paverčiu sekundėm..
+    $getMin = $val * 60; // Gaunu minutes
+    $getSek = (($getMin + $min) * 60) + $sek; // Gaunu sekundes
+    $addSek = $getSek + $add; // Pridedu random sekundes
+
+    // Visas gautas sekundes vėl paverčiu į Valandas, minutes..
+    $val = floor($addSek / 3600);
+    $min = floor($addSek / 60 % 60);
+    $sek = floor($addSek % 60);
+
+    $laikrodis = sprintf('%02d : %02d : %02d', $val, $min, $sek);
+    echo "<b>Laikrodis: </b>$laikrodis";
+
 
 
     ?>
