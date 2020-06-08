@@ -20,6 +20,39 @@
     echo '<b>1. </b>';
     echo "Aš esu $vardas $pavarde. Man yra $kiek metai(ų)<br/>";
 
+    # 2. Task
+    $pirmas = rand(0, 4);
+    $antras = rand(0, 4);
+
+    echo '<b>2. </b>';
+    // if($pirmas > $antras) {
+    //     $sum = $pirmas / $antras;
+    //     $round = round($sum, 2);
+    //     echo "$round";
+    // } else if($pirmas < $antras) {
+    //     $sum = $antras / $pirmas;
+    //     $round = round($sum, 2);
+    //     echo "$round";
+    // }
+    if ($pirmas > $antras) {
+        if ($pirmas != 0 && $antras != 0) {
+            $sum = $pirmas / $antras;
+            $round = round($sum, 2);
+            echo "$round";
+        } else {
+            echo 'Negalimas veiksmas';
+        }
+    } else if($pirmas < $antras) {
+        if ($antras != 0 && $pirmas != 0) {
+            $sum = $pirmas / $antras;
+            $round = round($sum, 2);
+            echo "$round";
+        } else {
+            echo 'Negalimas veiksmas';
+        }
+    } else {
+        echo '0';
+    }
 
 
 
