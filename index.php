@@ -213,7 +213,37 @@
 
     echo '<b>9. </b>';
 
+    $a = rand(0, 100);
+    $b = rand(0, 100);
+    $c = rand(0, 100);
 
+    $result = ($a + $b + $c) / 3;
+    echo "$a $b $c<br/>";
+    
+    echo "Suapvalintas: ";
+    echo(round($result));
+    echo "<br/>";
+
+    if($a < 10 || $a > 90) {
+        $result = ($b + $c) / 2;
+        echo "Atmetus: ";
+        echo(round($result));
+    } else if($b < 10 || $b > 90) {
+        $result = ($a + $c) / 2;
+        echo "Atmetus: ";
+        echo(round($result));
+    } else if($c < 10 || $c > 90) {
+        $result = ($a + $b) / 2;
+        echo "Atmetus: ";
+        echo(round($result));
+    } 
+
+    echo "<br/>";
+    echo "<br/>";
+
+    # 10. Task ##############
+
+    echo '<b>10. </b>';
 
 
     ?>
