@@ -139,7 +139,7 @@
 
     echo '<b>6. </b>';
 
-    $number = rand(1,6);
+    $number = rand(1, 6);
     echo "<b>&#060;h$number&#062;$number&#060;/h$number&#062;</b>";
 
     echo "<br/>";
@@ -148,6 +148,49 @@
     # 7. Task ##############
 
     echo '<b>7. </b>';
+
+    $pirmas = rand(-10, 10);
+    $antras = rand(-10, 10);
+    $trecias = rand(-10, 10);
+
+    echo "$pirmas, $antras, $trecias";
+    echo "<b> | </b>";
+
+    if ($pirmas < 0) {
+        echo "<font color='green'> $pirmas </font>";
+    } else if ($pirmas > 0) {
+        echo "<font color='blue'> $pirmas </font>";
+    } else {
+        echo "<font color='red'> $pirmas </font>";
+    }
+
+    if ($antras < 0) {
+        echo "<font color='green'>$antras </font>";
+    } else if ($antras > 0) {
+        echo "<font color='blue'>$antras </font>";
+    } else {
+        echo "<font color='red'>$antras </font>";
+    }
+
+    if ($trecias < 0) {
+        echo "<font color='green'>$trecias </font>";
+    } else if ($trecias > 0) {
+        echo "<font color='blue'>$trecias </font>";
+    } else {
+        echo "<font color='red'>$trecias </font>";
+    }
+
+    echo "<br/>";
+    echo "<br/>";
+
+    # 8. Task ##############
+
+    echo '<b>8. </b>';
+
+
+
+
+
 
     ?>
 </body>
