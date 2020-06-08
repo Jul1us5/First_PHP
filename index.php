@@ -198,7 +198,6 @@
     if ($zvakes > 2000) {
         $trys = $zvakes - ($zvakes * '.04');
         echo "Suma: $trys";
-        
     } else if ($zvakes > 1000) {
         $keturi = $zvakes - ($zvakes * '.03');
         echo "Suma: $keturi";
@@ -219,24 +218,24 @@
 
     $result = ($a + $b + $c) / 3;
     echo "$a $b $c<br/>";
-    
+
     echo "Suapvalintas: ";
-    echo(round($result));
+    echo (round($result));
     echo "<br/>";
 
-    if($a < 10 || $a > 90) {
+    if ($a < 10 || $a > 90) {
         $result = ($b + $c) / 2;
         echo "Atmetus: ";
-        echo(round($result));
-    } else if($b < 10 || $b > 90) {
+        echo (round($result));
+    } else if ($b < 10 || $b > 90) {
         $result = ($a + $c) / 2;
         echo "Atmetus: ";
-        echo(round($result));
-    } else if($c < 10 || $c > 90) {
+        echo (round($result));
+    } else if ($c < 10 || $c > 90) {
         $result = ($a + $b) / 2;
         echo "Atmetus: ";
-        echo(round($result));
-    } 
+        echo (round($result));
+    }
 
     echo "<br/>";
     echo "<br/>";
@@ -244,6 +243,25 @@
     # 10. Task ##############
 
     echo '<b>10. </b>';
+
+    $val = rand(1, 12);
+    $min = rand(1, 59);
+    $sek = rand(1, 59);
+    $add = rand(0, 300);
+
+    if ($val < 10) {
+        $val = "0$val";
+    } 
+    if($min < 10) {
+        $min = "0$min";
+    }
+    if($sek < 10) {
+        $sek = "0$sek";
+    }
+
+    echo "<b>Laikrodis: </b>$val : $min : $sek"; 
+    echo "<br/>";
+    echo "Plius: $add";
 
 
     ?>
