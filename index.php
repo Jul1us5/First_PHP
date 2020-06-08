@@ -55,19 +55,35 @@
     $trecias = rand(0, 25);
 
     echo '<b>3. </b>';
-    // echo "$pirmas $antras $trecias";
-    // $numbers = array($pirmas, $antras, $trecias);
-    
     $numbers = array($pirmas, $antras, $trecias);
     sort($numbers);
     print implode(", ", $numbers);
-
-    // echo "<br/>";
     echo " | ";
     echo "<b>";
-    print implode(array_slice($numbers,1,1));
+    print implode(array_slice($numbers, 1, 1));
     echo "</b>";
     echo "<br/>";
+    echo "<br/>";
+
+    # 4. Task ##############
+
+    echo '<b>4. </b>';
+    $a = rand(1, 10);
+    $b = rand(1, 10);
+    $c = rand(1, 10);
+
+    echo "$a $b $c";
+    // echo "<br/>";
+    if ($a == $b || $a == $c) {
+        echo ' | <b>Negalima</b>';
+    } else if ($b == $c || $b == $a) {
+        echo ' | <b>Negalima</b>';
+    } else if ($c == $a || $c == $b) {
+        echo ' | <b>Negalima</b>';
+    } else {
+        echo ' | <b>Galima</b>';
+    }
+
 
 
 
