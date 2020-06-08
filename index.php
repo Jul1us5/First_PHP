@@ -187,7 +187,31 @@
 
     echo '<b>8. </b>';
 
+    $zvakes = rand(5, 3000);;
 
+    echo "Žvakių: $zvakes<br/>";
+    echo "1vnt. 1Eur<br/>";
+    echo "Perkant > 1000vnt -3%<br/>";
+    echo "Perkant > 2000vnt -4%<br/>";
+
+
+    if ($zvakes > 2000) {
+        $trys = $zvakes - ($zvakes * '.04');
+        echo "Suma: $trys";
+        
+    } else if ($zvakes > 1000) {
+        $keturi = $zvakes - ($zvakes * '.03');
+        echo "Suma: $keturi";
+    } else {
+        echo "Suma: $zvakes";
+    }
+
+    echo "<br/>";
+    echo "<br/>";
+
+    # 9. Task ##############
+
+    echo '<b>9. </b>';
 
 
 
