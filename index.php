@@ -134,15 +134,20 @@
     echo "Du: $du<br/>";
 
     echo "<br/>";
-    echo "<br/>";
 
     # 6. Task ##############
 
     echo '<b>6. </b>';
 
+    $number = rand(1,6);
+    echo "<b>&#060;h$number&#062;$number&#060;/h$number&#062;</b>";
 
+    echo "<br/>";
+    echo "<br/>";
 
+    # 7. Task ##############
 
+    echo '<b>7. </b>';
 
     ?>
 </body>
