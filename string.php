@@ -61,8 +61,8 @@
 
     # 5. Task ##############
     echo '<b>5. </b>';
-    echo 'An American in Paris | ';
     $string = 'An American in Paris';
+    echo "$string | ";
     $replace = str_replace("A","<b>*</b>",$string);
     echo str_replace("a","<b>*</b>",$replace);
 
@@ -71,7 +71,17 @@
 
     # 6. Task ##############
     echo '<b>6. </b>';
+    $string = 'An American in Paris';
+    echo "$string | ";
+    $HowMenyUpper = substr_count($string, 'A');
+    $HowMenyLower = substr_count($string, 'a');
+    echo "$HowMenyUpper" + "$HowMenyLower";
 
+    echo '<br/>';
+    echo "<br/>";
+
+    # 7. Task ##############
+    echo '<b>7. </b>';
 
 
 
