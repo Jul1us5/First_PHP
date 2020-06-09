@@ -268,6 +268,26 @@
     $laikrodis = sprintf('%02d : %02d : %02d', $val, $min, $sek);
     echo "<b>Laikrodis: </b>$laikrodis";
 
+    echo "<br/>";
+    echo "<br/>";
+
+    # 11. Task ##############
+
+    echo '<b>11. </b>';
+
+    $a = rand(1000, 9999);
+    $b = rand(1000, 9999);
+    $c = rand(1000, 9999);
+    $d = rand(1000, 9999);
+    $e = rand(1000, 9999);
+    $f = rand(1000, 9999);
+
+    $string = "$a $b $c $d $e $f";
+    echo "$string";
+    echo "<br/>";
+    echo "....";
+    echo "<br/>";
+
 
 
     ?>
