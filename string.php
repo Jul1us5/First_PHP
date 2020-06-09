@@ -33,6 +33,27 @@
     $lowercase = strtolower($pavarde);
     echo "$uppercase $lowercase";
 
+    echo '<br/>';
+    echo "<br/>";
+
+    # 3. Task ##############
+    echo '<b>3. </b>';
+    $vardas = 'Julius';
+    $pavarde = 'Pavardenis';
+    $first = "$vardas[0] $pavarde[0]";
+    echo "$vardas $pavarde | ";
+    echo "<b>$first</b>";
+
+    echo '<br/>';
+    echo "<br/>";
+
+    # 4. Task ##############
+    echo '<b>4. </b>';
+
+
+
+
+
     ?>
 
 </body>
