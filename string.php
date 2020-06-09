@@ -88,29 +88,30 @@
     $string4 = " It's a Wonderful Life";
 
     echo "$string1 <b>|</b> ";
-    echo str_replace(['a', 'e', 'r', 'o', 'u'], ' ', "<b>$string1</b>");
+    echo str_replace(['a', 'e', 'i', 'o', 'u'], ' ', "<b>$string1</b>");
     echo "<br/>";
 
     echo "$string2 <b>|</b> ";
-    echo str_replace(['a', 'e', 'r', 'o', 'u'], ' ', "<b>$string2</b>");
+    echo str_replace(['a', 'e', 'i', 'o', 'u'], ' ', "<b>$string2</b>");
     echo "<br/>";
 
     echo "$string3 <b>|</b> ";
-    echo str_replace(['a', 'e', 'r', 'o', 'u'], ' ', "<b>$string3</b>");
+    echo str_replace(['a', 'e', 'i', 'o', 'u'], ' ', "<b>$string3</b>");
     echo "<br/>";
 
     echo "$string4 <b>|</b> ";
-    echo str_replace(['a', 'e', 'r', 'o', 'u'], ' ', "<b>$string4</b>");
+    echo str_replace(['a', 'e', 'i', 'o', 'u'], ' ', "<b>$string4</b>");
     echo "<br/>";
 
     echo '<br/>';
 
+
     # 8. Task ##############
     echo '<b>8. </b>';
 
-    $epizode = str_repeat(' ', rand(0,5)). rand(1,9);
+    $epizode = str_repeat(' ', rand(0, 5)) . rand(1, 9);
 
-    echo 'Star Wars: Episode '.$epizode . ' - A New Hope <b>|</b> ';
+    echo 'Star Wars: Episode ' . $epizode . ' - A New Hope <b>|</b> ';
     echo "Atsakymas: $epizode";
 
     echo '<br/>';
@@ -118,6 +119,50 @@
 
     # 9. Task ##############
     echo '<b>9. </b>';
+
+    $string = "Don't Be a Menace to South Central While Drinking Your Juice in the Hood";
+    $string2 = "Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale";
+
+    $array = str_word_count($string, 1);
+    $array2 = str_word_count($string2, 1);
+    $kiek = 0;
+
+    foreach ($array as $value) {
+        if (strlen($value) <= 5) {
+            $kiek++;
+        }
+    }
+    echo "$string | ";
+    echo "<b>Yra: $kiek</b>";
+
+
+    $kiek = 0;
+    echo '<br/>';
+    foreach ($array2 as $value) {
+        if (strlen($value) <= 5) {
+            $kiek++;
+        }
+    }
+    $search = 'ą';
+    if (preg_match("/{$search}/", $string2)) {
+        $kiek--;
+    }
+
+    echo "$string2 | ";
+    echo "<b>Yra: $kiek</b>";
+
+    echo '<br/>';
+    echo '<br/>';
+
+    # 10. Task ##############
+    echo '<b>10. </b>';
+
+
+
+
+
+
+
 
 
     ?>
