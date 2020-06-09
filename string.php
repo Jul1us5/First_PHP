@@ -104,10 +104,20 @@
     echo "<br/>";
 
     echo '<br/>';
-    echo "<br/>";
 
     # 8. Task ##############
     echo '<b>8. </b>';
+
+    $epizode = str_repeat(' ', rand(0,5)). rand(1,9);
+
+    echo 'Star Wars: Episode '.$epizode . ' - A New Hope <b>|</b> ';
+    echo "Atsakymas: $epizode";
+
+    echo '<br/>';
+    echo '<br/>';
+
+    # 9. Task ##############
+    echo '<b>9. </b>';
 
 
     ?>
