@@ -158,17 +158,11 @@
     echo '<b>10. </b>';
 
     $length = 3;
-    function random($length){
-        return substr(str_shuffle("qwertyuiopasdfghjklzxcvbnm"),0,$length);
+    function random($length)
+    {
+        return substr(str_shuffle("qwertyuiopasdfghjklzxcvbnm"), 0, $length);
     }
     echo random($length);
-
-
-
-
-
-
-
 
     ?>
 
