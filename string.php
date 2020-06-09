@@ -122,9 +122,12 @@
 
     $string = "Don't Be a Menace to South Central While Drinking Your Juice in the Hood";
     $string2 = "Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale";
-
+    
+    
     $array = str_word_count($string, 1);
-    $array2 = str_word_count($string2, 1);
+    $array2 = str_word_count($string2, 1, 'ąčęėįšųūž'); // Lietuviškos raidės, kad nesugadinti masyvo.
+    
+
     $kiek = 0;
 
     foreach ($array as $value) {
@@ -139,13 +142,9 @@
     $kiek = 0;
     echo '<br/>';
     foreach ($array2 as $value) {
-        if (strlen($value) <= 5) {
+        if (strlen(utf8_decode($value)) <= 5) { // UTF-8
             $kiek++;
         }
-    }
-    $search = 'ą';
-    if (preg_match("/{$search}/", $string2)) {
-        $kiek--;
     }
 
     echo "$string2 | ";
@@ -163,6 +162,12 @@
         return substr(str_shuffle("qwertyuiopasdfghjklzxcvbnm"), 0, $length);
     }
     echo random($length);
+
+    echo '<br/>';
+    echo '<br/>';
+
+    # 11. Task ##############
+    echo '<b>11. </b>';
 
     ?>
 
