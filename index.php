@@ -72,15 +72,13 @@
     $b = rand(1, 10);
     $c = rand(1, 10);
 
-    echo "$a, $b, $c";
-    if ($a == $b || $a == $c) {
-        echo ' | <b>Negalima</b>';
-    } else if ($b == $c || $b == $a) {
-        echo ' | <b>Negalima</b>';
-    } else if ($c == $a || $c == $b) {
-        echo ' | <b>Negalima</b>';
+    echo "$a, $b, $c <b>|</b> ";
+    if ($a === $b && $a === $c) {
+        echo 'Susidare trikampis';
+    } elseif ($a + $b < $c || $b + $c < $a || $a + $c < $b) {
+        echo 'Trikampis nesusidaro';
     } else {
-        echo ' | <b>Galima</b>';
+        echo "Susidare trikampis";
     }
     echo "<br/>";
     echo "<br/>";
@@ -287,6 +285,10 @@
     echo "<br/>";
     echo "....";
     echo "<br/>";
+
+
+
+
 
 
 
