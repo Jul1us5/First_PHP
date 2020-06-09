@@ -122,11 +122,11 @@
 
     $string = "Don't Be a Menace to South Central While Drinking Your Juice in the Hood";
     $string2 = "Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale";
-    
-    
+
+
     $array = str_word_count($string, 1);
     $array2 = str_word_count($string2, 1, 'ąčęėįšųūž'); // Lietuviškos raidės, kad nesugadinti masyvo.
-    
+
 
     $kiek = 0;
 
@@ -168,6 +168,23 @@
 
     # 11. Task ##############
     echo '<b>11. </b>';
+
+
+    $stringBox = $string . " " . $string2;
+    $kiek = 10;
+    echo $stringBox;
+    echo '<br/>';
+    echo ' ';
+    echo '<br/>';
+
+    $array = str_word_count($stringBox, 1, 'ąčęėįšųūž');
+    $index = array_rand($array, $kiek);
+    for ($i = 0; $i < $kiek; $i++) {
+        echo "<b>";
+        echo $array[$index[$i]];
+        echo "</b>";
+        echo '<br/>';
+    }
 
     ?>
 
