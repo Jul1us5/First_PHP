@@ -61,6 +61,16 @@
 
     # 5. Task ##############
     echo '<b>5. </b>';
+    echo 'An American in Paris | ';
+    $string = 'An American in Paris';
+    $replace = str_replace("A","<b>*</b>",$string);
+    echo str_replace("a","<b>*</b>",$replace);
+
+    echo '<br/>';
+    echo "<br/>";
+
+    # 6. Task ##############
+    echo '<b>6. </b>';
 
 
 
