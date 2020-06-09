@@ -49,7 +49,18 @@
 
     # 4. Task ##############
     echo '<b>4. </b>';
+    echo "$vardas $pavarde | ";
+    $lastVardas = substr($vardas, -3);
+    $lastPavarde = substr($pavarde, -3); 
+    $last = "$lastVardas $lastPavarde";
+    
+    echo "<b>$last</b>";
 
+    echo '<br/>';
+    echo "<br/>";
+
+    # 5. Task ##############
+    echo '<b>5. </b>';
 
 
 
