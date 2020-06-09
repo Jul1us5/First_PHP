@@ -26,7 +26,12 @@
 
     # 2. Task ##############
     echo '<b>2. </b>';
-    
+    $vardas = 'Julius';
+    $pavarde = 'Pavardenis';
+
+    $uppercase = strtoupper($vardas);
+    $lowercase = strtolower($pavarde);
+    echo "$uppercase $lowercase";
 
     ?>
 
