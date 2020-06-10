@@ -109,9 +109,9 @@
     $x = 11;
 
     echo "<div class='edges'>";
-    for ($y = 0; $y < 10; $y++) {
-        for ($x = 0; $x < 10; $x++) {
-            if ($x == $y || $x + $y == 9) {
+    for ($y = 0; $y < $noun; $y++) {
+        for ($x = 0; $x < $noun; $x++) {
+            if ($x == $y || $x + $y == $noun - 1) {
                 echo "<font color='red'> * </font>";
             } else {
                 echo ' * ';
@@ -125,7 +125,7 @@
     echo "<br/>";
     # 6. Task ##############
 
-    echo '<b>6. a: </b>';
+    echo '<b>6.<br/> a: </b>';
     $h = 0;
     while (1 !== $h) {
         $coin = rand(0, 1);
@@ -138,7 +138,7 @@
     }
     echo "<br/>";
 
-    echo '<b>6. b: </b>';
+    echo '<b> b: </b>';
     $h = 0;
     while (3 !== $h) {
         $coin = rand(0, 1);
@@ -150,7 +150,7 @@
         }
     }
     echo "<br/>";
-    echo '<b>6. c: </b>';
+    echo '<b> c: </b>';
     $h = 0;
     while (3 !== $h) {
         $coin = rand(0, 1);
@@ -231,6 +231,18 @@
     # 9. Task ##############
     echo '<b>9. </b><br/>';
 
+    $c = "10 bezdzioniu suvalge 20 bananu per: ";
+    echo ("1. " . $c); 
+    echo(microtime($c));
+    echo "<br/>";
+
+    //     $per = 0;
+    // for($x = 0; $x < 1000000; $x++) {
+    //     $b = "10 bezdzioniu suvalge 20 bananu per: ";
+    //     $per = (microtime($b));
+    // }
+    //     echo ("2. " . $b); 
+    //     echo $per;
 
     ?>
 </body>
