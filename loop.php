@@ -10,12 +10,16 @@
     body {
         word-break: break-all;
     }
-
     .edges {
         line-height: 12px;
         width: 118px;
         height: 115px;
         margin-left: calc(50% - 60px);
+        text-align: center;
+    }
+    .rombe {
+        line-height: 12px;
+        text-align: center;
     }
 </style>
 
@@ -190,6 +194,44 @@
             }
         }
     }
+    echo "<br/>";
+
+    echo "<br/>";
+    # 8. Task ##############
+    echo '<b>8. </b><br/>';
+
+
+    for ($i = 1; $i <= 11; $i++) {
+        echo "<div class='rombe'>";
+        foreach (range(1, $i) as $value) {
+            $r = rand(0, 255);
+            $g = rand(0, 255);
+            $b  = rand(0, 255);
+            $color = "rgb($r, $g, $b)";
+            echo "<span style='color:$color;'> * </span>";
+        }
+        echo "</div>";
+    }
+    for ($i = 10; $i >= 1; $i--) {
+        echo "<div class='rombe'>";
+        foreach (range(1, $i) as $value) {
+            $r = rand(0, 255);
+            $g = rand(0, 255);
+            $b  = rand(0, 255);
+            $color = "rgb($r, $g, $b)";
+            echo "<span style='color:$color;'> * </span>";
+        }
+        echo "</div>";
+    }
+
+
+
+    echo "<br/>";
+    echo "<br/>";
+    # 9. Task ##############
+    echo '<b>9. </b><br/>';
+
+
     ?>
 </body>
 
