@@ -10,9 +10,12 @@
     body {
         word-break: break-all;
     }
-    .noun {
-        line-height: 11.5px;
-        text-align: center;
+
+    .edges {
+        line-height: 12px;
+        width: 118px;
+        height: 115px;
+        margin-left: calc(50% - 60px);
     }
 </style>
 
@@ -83,20 +86,36 @@
     # 4. Task ##############
     echo '<b>4. </b><br/>';
 
-    $noun = 10;
-
-    echo "<div class='noun'>";
-    for ($y = 1; $y <= $noun; $y++) {
-        echo "<br/>*";
-        for ($x = 1; $x < $noun; $x++) {
-            echo " * ";
-        }
+    $kiek = 100;
+    echo "<div class='edges'>";
+    for ($y = 1; $y <= $kiek; $y++) {
+        echo " * ";
     }
+
     echo "</div>";
+    echo "</div>";
+
     echo "<br/>";
     echo "<br/>";
     # 5. Task ##############
     echo '<b>5. </b><br/>';
+
+
+    $kiek = 100;
+    $noun = 10;
+    $x = 11;
+
+    echo "<div class='edges'>";
+    for ($y = 0; $y < 10; $y++) {
+        for ($x = 0; $x < 10; $x++) {
+            if ($x == $y || $x + $y == 9) {
+                echo "<font color='red'> * </font>";
+            } else {
+                echo ' * ';
+            }
+        }
+        echo '<br>';
+    }
 
     ?>
 </body>
