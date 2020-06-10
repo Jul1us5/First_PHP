@@ -91,8 +91,6 @@
     for ($y = 1; $y <= $kiek; $y++) {
         echo " * ";
     }
-
-    echo "</div>";
     echo "</div>";
 
     echo "<br/>";
@@ -116,6 +114,12 @@
         }
         echo '<br>';
     }
+    echo "</div>";
+
+    echo "<br/>";
+    echo "<br/>";
+    # 6. Task ##############
+    echo '<b>6. </b><br/>';
 
     ?>
 </body>
