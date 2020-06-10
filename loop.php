@@ -21,6 +21,7 @@
 
 <body>
     <?php
+
     # 1. Task ##############
     echo '<b>1. a: </b><br/>';
     $x = 1;
@@ -119,8 +120,76 @@
     echo "<br/>";
     echo "<br/>";
     # 6. Task ##############
-    echo '<b>6. </b><br/>';
 
+    echo '<b>6. a: </b>';
+    $h = 0;
+    while (1 !== $h) {
+        $coin = rand(0, 1);
+        if (0 == $coin) {
+            echo "H ";
+            $h++;
+        } else {
+            echo "H ";
+        }
+    }
+    echo "<br/>";
+
+    echo '<b>6. b: </b>';
+    $h = 0;
+    while (3 !== $h) {
+        $coin = rand(0, 1);
+        if (0 == $coin) {
+            echo "H ";
+            $h++;
+        } else {
+            echo "S ";
+        }
+    }
+    echo "<br/>";
+    echo '<b>6. c: </b>';
+    $h = 0;
+    while (3 !== $h) {
+        $coin = rand(0, 1);
+        if (0 == $coin) {
+            echo 'H ';
+            $h++;
+        } else {
+            echo 'S ';
+            $h = 0;
+        }
+    }
+    echo "<br/>";
+
+    echo "<br/>";
+    # 7. Task ##############
+    echo '<b>7. </b><br/>';
+
+
+    $taskai = 0;
+    $petroSuma = 0;
+    $kazioSuma = 0;
+
+    while (true) {
+        $petroTaskai = rand(10, 20);
+        $kazioTaskai = rand(5, 25);
+        echo "Petras: $petroTaskai | ";
+        echo "Kazys: $kazioTaskai | ";
+        if ($petroTaskai > $kazioTaskai) {
+            $petroSuma += $petroTaskai;
+            echo "Petras Laimėjo! [$petroSuma]<br/>";
+            if ($petroSuma >= 222) {
+                echo "Petras surinko pirmas!<br/>";
+                break;
+            }
+        } else {
+            $kazioSuma += $kazioTaskai;
+            echo "Kazys Laimėjo! [$kazioSuma]<br/>";
+            if ($kazioSuma >= 222) {
+                echo "Kazys surinko pirmas!<br/>";
+                break;
+            }
+        }
+    }
     ?>
 </body>
 
