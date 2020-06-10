@@ -10,6 +10,7 @@
     body {
         word-break: break-all;
     }
+
     .edges {
         line-height: 12px;
         width: 118px;
@@ -17,6 +18,7 @@
         margin-left: calc(50% - 60px);
         text-align: center;
     }
+
     .rombe {
         line-height: 12px;
         text-align: center;
@@ -231,18 +233,27 @@
     # 9. Task ##############
     echo '<b>9. </b><br/>';
 
-    $c = "10 bezdzioniu suvalge 20 bananu per: ";
-    echo ("1. " . $c); 
-    echo(microtime($c));
-    echo "<br/>";
+    $startDuble = microtime(true);
+    $endDuble = 0;
+    for($i = 0; $i < 1000000; $i++){
+        $c = "10 bezdzioniu suvalge 20 bananu.";
+    }
+    $endDuble = microtime(true);
+    $startOne = microtime(true);
+    $endOne = 0;
+    for($i = 0; $i < 1000000; $i++){
+        $c = '10 bezdzioniu suvalge 20 bananu.';
+    }
+    $endOne = microtime(true);
+    $dubleTime = $endDuble - $startDuble;
+    $oneTime = $endOne - $startOne;
+    echo "Stringas viengubose: $oneTime<br/>";
+    echo "Stringas dvigubose: $dubleTime<br/>";
 
-    //     $per = 0;
-    // for($x = 0; $x < 1000000; $x++) {
-    //     $b = "10 bezdzioniu suvalge 20 bananu per: ";
-    //     $per = (microtime($b));
-    // }
-    //     echo ("2. " . $b); 
-    //     echo $per;
+    echo "<br/>";
+    echo "<br/>";
+    # 10. Task ##############
+    echo '<b>10. </b><br/>';
 
     ?>
 </body>
