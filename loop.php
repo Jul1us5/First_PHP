@@ -10,6 +10,10 @@
     body {
         word-break: break-all;
     }
+    .noun {
+        line-height: 11.5px;
+        text-align: center;
+    }
 </style>
 
 <body>
@@ -67,19 +71,32 @@
     $iki = 3000;
     do {
         $nuo++;
-        if($nuo == 77) {
+        if ($nuo == 77) {
             echo $nuo;
-        } else if($nuo % 77 == 0) {
+        } else if ($nuo % 77 == 0) {
             echo '<b>,</b> ' . $nuo;
         }
-
-
     } while ($nuo < $iki);
 
     echo "<br/>";
     echo "<br/>";
     # 4. Task ##############
     echo '<b>4. </b><br/>';
+
+    $noun = 10;
+
+    echo "<div class='noun'>";
+    for ($y = 1; $y <= $noun; $y++) {
+        echo "<br/>*";
+        for ($x = 1; $x < $noun; $x++) {
+            echo " * ";
+        }
+    }
+    echo "</div>";
+    echo "<br/>";
+    echo "<br/>";
+    # 5. Task ##############
+    echo '<b>5. </b><br/>';
 
     ?>
 </body>
