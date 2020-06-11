@@ -135,7 +135,7 @@
             echo "H ";
             $h++;
         } else {
-            echo "H ";
+            echo "S ";
         }
     }
     echo "<br/>";
@@ -253,7 +253,33 @@
     echo "<br/>";
     echo "<br/>";
     # 10. Task ##############
-    echo '<b>10. </b><br/>';
+    echo '<b>10.</b><br/>';
+
+    $vinis = 85;
+    $smugiai = 0;
+    $kiekLetas = 0;
+    $kiekGreitas = 0;
+
+    while(true) {
+        $letas = rand(5,20);
+        $greitas = rand(20, 30);
+        $kiekLetas += $letas;
+        $kiekGreitas += $greitas;
+
+
+
+            do {
+                echo "<b>a:</b> Smugiu: $smugiai";
+            break;
+            } while($kiekLetas >= $vinis * 5);
+        
+
+            if($kiekGreitas >= $vinis * 5) {
+                echo "<b>b:</b> Smugiu: $smugiai";
+            break;
+            }
+        
+    }
 
     ?>
 </body>
