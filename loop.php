@@ -291,6 +291,50 @@
 
     echo hits($vinis, $hits, $kiekLetas, $kiekGreitas, $vnt);
 
+
+    echo "<br/>";
+    echo "<br/>";
+    # 11. Task ##############
+    echo '<b>11.</b><br/>';
+
+    $length = 50;
+    $min = 1;
+    $max = 200;
+    $array = [];
+    echo "<b>Unikalūs: </b>";
+    foreach (range(0, $length - 1) as $i) {
+        while (in_array($num = mt_rand($min, $max), $array));
+        $array[] = $num;
+        echo " $num ";
+    }
+    echo "<br/>";
+    echo "<b>Pirminiai:</b> ";
+    $new = [];
+    foreach ($array as $key => $number) {
+        $count = 0;
+        for ($i = 1; $i <= $number; $i++) {
+            if (($number % $i) == 0) {
+                $count++;
+            }
+        }
+        if ($number == 1) {
+            continue;
+        }
+        if ($count < 3) {
+            echo $number . " ";
+
+            array_push($new, $number);
+        }
+    }
+    echo "<br/>";
+    echo "<b>Surūšiuoti:</b> ";
+    sort($new);
+    foreach ($new as $value) {
+        echo $value . " ";
+    }
+    echo "<br/>";
+
+
     ?>
 </body>
 
