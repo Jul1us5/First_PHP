@@ -235,13 +235,13 @@
 
     $startDuble = microtime(true);
     $endDuble = 0;
-    for($i = 0; $i < 1000000; $i++){
+    for ($i = 0; $i < 1000000; $i++) {
         $c = "10 bezdzioniu suvalge 20 bananu.";
     }
     $endDuble = microtime(true);
     $startOne = microtime(true);
     $endOne = 0;
-    for($i = 0; $i < 1000000; $i++){
+    for ($i = 0; $i < 1000000; $i++) {
         $c = '10 bezdzioniu suvalge 20 bananu.';
     }
     $endOne = microtime(true);
@@ -255,31 +255,41 @@
     # 10. Task ##############
     echo '<b>10.</b><br/>';
 
+    $vnt = 5;
     $vinis = 85;
     $smugiai = 0;
     $kiekLetas = 0;
     $kiekGreitas = 0;
+    $letas = rand(5, 20);
+    $greitas = rand(20, 30);
+    $hits = 0;
 
-    while(true) {
-        $letas = rand(5,20);
+
+    function hits($vinis, $hits, $kiekLetas, $kiekGreitas, $vnt)
+    {
         $greitas = rand(20, 30);
-        $kiekLetas += $letas;
-        $kiekGreitas += $greitas;
 
-
-
-            do {
-                echo "<b>a:</b> Smugiu: $smugiai";
-            break;
-            } while($kiekLetas >= $vinis * 5);
-        
-
-            if($kiekGreitas >= $vinis * 5) {
-                echo "<b>b:</b> Smugiu: $smugiai";
-            break;
+        do {
+            $hits++;
+            $letas = rand(5, 20);
+            $kiekLetas += $letas;
+        } while ($kiekLetas < $vinis * $vnt);
+        echo "<b>a: </b>Lėtas kalimas | Smugiu: <b>$hits</b> ( Yra $vnt vynis po $vinis mm. )";
+        $hits = 0;
+        echo "<br/>";
+        do {
+            $hits++;
+            $greitas = rand(20, 30);
+            if (rand(0, 1) == 1) {
+                $kiekGreitas += $greitas;
+            } else {
+                $kiekGreitas += 0;
             }
-        
+        } while ($kiekGreitas < $vinis * $vnt);
+        echo "<b>b: </b>Greitas kalimas | Smugiu: <b>$hits</b> ( Yra $vnt vynis po $vinis mm. greitai smugiuojat yra tikimybe nepataikyt! )";
     }
+
+    echo hits($vinis, $hits, $kiekLetas, $kiekGreitas, $vnt);
 
     ?>
 </body>
