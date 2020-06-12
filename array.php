@@ -94,9 +94,116 @@
 
     echo "<br/>";
     # 3. Task ##############
-    echo '<b>3.</b>';
+    echo '<b>3. </b><br/>';
 
 
+    $add = 200;
+    $array = [];
+    for ($x = 1; $x <= $add; $x++) {
+
+        $range = range('A', 'D');
+        $index = array_rand($range);
+        array_push($array, $range[$index]);
+    }
+
+    $a = 0;
+    $b = 0;
+    $c = 0;
+    $d = 0;
+
+
+    foreach ($array as $value) {
+        if ($value == 'A') {
+            $a++;
+        } else if ($value == 'B') {
+            $b++;
+        } else if ($value == 'C') {
+            $c++;
+        } else {
+            $d++;
+        }
+        echo $value . " ";
+    }
+    echo "<br/>";
+    echo "<br/>";
+    echo "<b>A</b> yra: $a<br/>";
+    echo "<b>B</b> yra: $b<br/>";
+    echo "<b>C</b> yra: $c<br/>";
+    echo "<b>D</b> yra: $d<br/>";
+
+    echo "<br/>";
+    # 4. Task ##############
+    echo '<b>4. </b><br/>';
+
+    sort($array);
+    foreach ($array as $value) {
+        echo $value . " ";
+    }
+
+    echo "<br/>";
+    echo "<br/>";
+
+    echo '<b>5. </b>';
+
+    $add = 200;
+    $array1 = [];
+    $array2 = [];
+    $array3 = [];
+    for ($x = 1; $x <= $add; $x++) {
+
+        $range = range('A', 'D');
+        $index = array_rand($range);
+        array_push($array1, $range[$index]);
+        $index = array_rand($range);
+        array_push($array2, $range[$index]);
+        $index = array_rand($range);
+        array_push($array3, $range[$index]);
+    }
+    $array = [];
+    foreach ($array1 as $key => $value) {
+        $result = $array1[$key] . $array2[$key] . $array3[$key] . " ";
+        array_push($array, $result);
+    }
+    $input = $array;
+    $result = array_unique($input);
+    foreach ($result as $key1 => $value) {
+        echo $value . " ";
+    }
+    echo "<b>Unikalių: ";
+    echo count($result) . "</b>";
+
+    echo "<br/>";
+    echo "<br/>";
+    # 6. Task ##############
+    echo '<b>6. </b><br/>';
+
+    $array1 = [];
+    $array2 = [];
+    $kiek = 100;
+    $or = 0;
+    $x = 0;
+
+    for ($i = 0; $i < $kiek; $i++) {
+        $random = random_int(100, 999);
+        if (in_array($random, $array1)) $kiek++;
+        else array_push($array1, $random);
+    }
+
+    for ($i = 0; $i < $kiek; $i++) {
+        $random = random_int(100, 999);
+        if (in_array($random, $array2)) $kiek++;
+        else array_push($array2, $random);
+    }
+    echo "<b>Pirmas masyvas: </b>";
+    foreach ($array1 as $value) {
+        echo "$value ";
+    }
+    echo "<br/>";
+    echo "<br/>";
+    echo "<b>Antras masyvas: </b>";
+    foreach ($array2 as $value) {
+        echo "$value ";
+    }
 
     ?>
 
