@@ -115,9 +115,9 @@
     foreach ($array as $value) {
         if ($value == 'A') {
             $a++;
-        } else if($value == 'B') {
+        } else if ($value == 'B') {
             $b++;
-        } else if($value == 'C') {
+        } else if ($value == 'C') {
             $c++;
         } else {
             $d++;
@@ -134,6 +134,16 @@
     echo "<br/>";
     # 4. Task ##############
     echo '<b>4. </b><br/>';
+
+    sort($array);
+    foreach ($array as $value) {
+        echo $value . " ";
+    }
+
+    echo "<br/>";
+    echo "<br/>";
+    # 5. Task ##############
+    echo '<b>5. </b><br/>';
 
 
     ?>
