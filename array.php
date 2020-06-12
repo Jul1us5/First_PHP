@@ -94,8 +94,46 @@
 
     echo "<br/>";
     # 3. Task ##############
-    echo '<b>3.</b>';
+    echo '<b>3. </b><br/>';
 
+
+    $add = 200;
+    $array = [];
+    for ($x = 1; $x <= $add; $x++) {
+
+        $range = range('A', 'D');
+        $index = array_rand($range);
+        array_push($array, $range[$index]);
+    }
+
+    $a = 0;
+    $b = 0;
+    $c = 0;
+    $d = 0;
+
+
+    foreach ($array as $value) {
+        if ($value == 'A') {
+            $a++;
+        } else if($value == 'B') {
+            $b++;
+        } else if($value == 'C') {
+            $c++;
+        } else {
+            $d++;
+        }
+        echo $value . " ";
+    }
+    echo "<br/>";
+    echo "<br/>";
+    echo "<b>A</b> yra: $a<br/>";
+    echo "<b>B</b> yra: $b<br/>";
+    echo "<b>C</b> yra: $c<br/>";
+    echo "<b>D</b> yra: $d<br/>";
+
+    echo "<br/>";
+    # 4. Task ##############
+    echo '<b>4. </b><br/>';
 
 
     ?>
