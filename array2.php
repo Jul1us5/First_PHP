@@ -117,11 +117,20 @@
         }
         sort($multiArray[$level]);
     }
-    
+
+    sort($multiArray);
+
     print("<pre>" . print_r($multiArray, true) . "</pre>");
 
+    echo "<br/>";
+    # 4. Task ##############
+    echo '<b>4.</b>';
+    echo " Surūšiavau 3. punkte, kad nereiktu per naują kopijuot, kad parodyt tvarkingai :) <b><br/>";
 
 
+    echo "<br/>";
+    # 5. Task ##############
+    echo '<b>5.</b>';
 
     ?>
 </body>
