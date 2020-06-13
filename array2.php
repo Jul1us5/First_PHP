@@ -51,9 +51,6 @@
     $index3 = 0;
     $index4 = 0;
 
-
-
-
     $carry = 0;
     $index0 = array_reduce($multiArray, function ($carry, $item) {
         $carry += $item[0];
@@ -146,8 +143,31 @@
         }
     }
 
-
     print("<pre>" . print_r($multiArray, true) . "</pre>");
+
+
+    echo "<br/>";
+    # 6. Task ##############
+    echo '<b>6.</b>';
+
+    echo "$space<b> user_id didėjančia tvarka: </b><br/>";
+    sort($multiArray);
+    print("<pre>" . print_r($multiArray, true) . "</pre>");
+
+    echo "$space<b> place_in_row mažėjančia tvarka: </b><br/>";
+
+    function place_in_row($a, $b) {
+        return strnatcmp($b['place_in_row'], $a['place_in_row']);
+    }
+    usort($multiArray, 'place_in_row' );
+    print("<pre>" . print_r($multiArray, true) . "</pre>");
+
+
+    echo "<br/>";
+    # 7. Task ##############
+    echo '<b>7.</b>';
+
+
 
     ?>
 </body>
