@@ -125,12 +125,29 @@
     echo "<br/>";
     # 4. Task ##############
     echo '<b>4.</b>';
-    echo " Surūšiavau 3. punkte, kad nereiktu per naują kopijuot, kad parodyt tvarkingai :) <b><br/>";
+    echo " Surūšiavau 3. punkte, kad nereiktu per naują kopijuot, kad parodyt tvarkingai :)<br/>";
 
 
     echo "<br/>";
     # 5. Task ##############
     echo '<b>5.</b>';
+
+    $array = range(1, 30);
+    $multiArray = array();
+
+    foreach ($array as $level) {
+        $ret[$level] = array();
+        foreach ($array as $level) {
+            $id = rand(1, 1000000);
+            $row = rand(0, 100);
+
+            $multiArray[$level]['user_id'] = $id;
+            $multiArray[$level]['place_in_row'] = $row;
+        }
+    }
+
+
+    print("<pre>" . print_r($multiArray, true) . "</pre>");
 
     ?>
 </body>
