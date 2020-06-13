@@ -102,7 +102,23 @@
     # 3. Task ##############
     echo '<b>3.</b>';
 
-
+    $array = range(1, 10);
+    $multiArray = array();
+    $kiek = 0;
+    foreach ($array as $level) {
+        $iki = rand(2, 20);
+        $innerArray = range(1, $iki);
+        $ret[$level] = array();
+        sort($multiArray);
+        foreach ($innerArray as $level2) {
+            $letter = chr(rand(65, 90));
+            $lvl = $letter;
+            $multiArray[$level][] = $lvl;
+        }
+        sort($multiArray[$level]);
+    }
+    
+    print("<pre>" . print_r($multiArray, true) . "</pre>");
 
 
 
