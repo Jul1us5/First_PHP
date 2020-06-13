@@ -214,9 +214,41 @@
 
     $diff = array_diff($array1, $array2);
 
-        foreach($diff as $value) {
-            echo "$value ";
-        }
+    foreach ($diff as $value) {
+        echo "$value ";
+    }
+
+    echo "<br/>";
+    echo "<br/>";
+    # 8. Task ##############
+    echo '<b>8. </b>';
+    echo "<b>Yra pirmam ir antram: </b>";
+
+    $diff = array_intersect($array1, $array2);
+
+    foreach ($diff as $value) {
+        echo "$value ";
+    }
+
+    echo "<br/>";
+    echo "<br/>";
+    # 9. Task ##############
+    echo '<b>9. </b>';
+    echo "<b>Indexas iš pirmo / Reikšmė iš antro masyvo: </b>";
+
+    $newArray = [];
+    $kiek = 0;
+    foreach ($array1 as $key => $value1) {   
+        $newArray[$value1] = $array2[$kiek];
+        $kiek++;
+    }
+    print_r($newArray);
+
+    echo "<br/>";
+    echo "<br/>";
+    # 10. Task ##############
+    echo '<b>10. </b>';
+
 
     ?>
 
