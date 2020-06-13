@@ -169,6 +169,7 @@
     foreach ($result as $key1 => $value) {
         echo $value . " ";
     }
+    echo "<br/>";
     echo "<b>Unikalių: ";
     echo count($result) . "</b>";
 
@@ -179,21 +180,21 @@
 
     $array1 = [];
     $array2 = [];
-    $kiek = 100;
-    $or = 0;
-    $x = 0;
+    $array1_kiek = 100;
+    $array2_kiek = 100;
+    $iki = 999;
 
-    for ($i = 0; $i < $kiek; $i++) {
-        $random = random_int(100, 999);
-        if (in_array($random, $array1)) $kiek++;
+    for ($i = 0; $i < $array1_kiek; $i++) {
+        $random = random_int(1, $iki);
+        if (in_array($random, $array1)) $array1_kiek++;
         else array_push($array1, $random);
     }
-
-    for ($i = 0; $i < $kiek; $i++) {
-        $random = random_int(100, 999);
-        if (in_array($random, $array2)) $kiek++;
+    for ($i = 0; $i < $array2_kiek; $i++) {
+        $random = random_int(1, $iki);
+        if (in_array($random, $array2)) $array2_kiek++;
         else array_push($array2, $random);
     }
+
     echo "<b>Pirmas masyvas: </b>";
     foreach ($array1 as $value) {
         echo "$value ";
@@ -204,6 +205,50 @@
     foreach ($array2 as $value) {
         echo "$value ";
     }
+
+    echo "<br/>";
+    echo "<br/>";
+    # 7. Task ##############
+    echo '<b>7. </b>';
+    echo "<b>Yra pirmam bet nera antram: </b>";
+
+    $diff = array_diff($array1, $array2);
+
+    foreach ($diff as $value) {
+        echo "$value ";
+    }
+
+    echo "<br/>";
+    echo "<br/>";
+    # 8. Task ##############
+    echo '<b>8. </b>';
+    echo "<b>Yra pirmam ir antram: </b>";
+
+    $diff = array_intersect($array1, $array2);
+
+    foreach ($diff as $value) {
+        echo "$value ";
+    }
+
+    echo "<br/>";
+    echo "<br/>";
+    # 9. Task ##############
+    echo '<b>9. </b>';
+    echo "<b>Indexas iš pirmo / Reikšmė iš antro masyvo: </b>";
+
+    $newArray = [];
+    $kiek = 0;
+    foreach ($array1 as $key => $value1) {   
+        $newArray[$value1] = $array2[$kiek];
+        $kiek++;
+    }
+    print_r($newArray);
+
+    echo "<br/>";
+    echo "<br/>";
+    # 10. Task ##############
+    echo '<b>10. </b>';
+
 
     ?>
 
