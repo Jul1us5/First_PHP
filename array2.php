@@ -156,10 +156,11 @@
 
     echo "$space<b> place_in_row mažėjančia tvarka: </b><br/>";
 
-    function place_in_row($a, $b) {
+    function place_in_row($a, $b)
+    {
         return strnatcmp($b['place_in_row'], $a['place_in_row']);
     }
-    usort($multiArray, 'place_in_row' );
+    usort($multiArray, 'place_in_row');
     print("<pre>" . print_r($multiArray, true) . "</pre>");
 
 
@@ -167,6 +168,38 @@
     # 7. Task ##############
     echo '<b>7.</b>';
 
+    $array = range(1, 30);
+    $multiArray = array();
+
+    $length = 3;
+    function random($length)
+    {
+        return substr(str_shuffle("qwertyuiopasdfghjklzxcvbnm"), 0, $length);
+    }
+
+
+    foreach ($array as $level) {
+        $ret[$level] = array();
+        foreach ($array as $level) {
+            $id = rand(1, 1000000);
+            $row = rand(0, 100);
+            $length = rand(5, 15);
+            $string = substr(str_shuffle("qwertyuiopasdfghjklzxcvbnm"), 0, $length);
+
+            $multiArray[$level]['user_id'] = $id;
+            $multiArray[$level]['place_in_row'] = $row;
+            $shuffled = str_shuffle($string);
+            $multiArray[$level]['name'] = $shuffled;
+            $shuffled = str_shuffle($string);
+            $multiArray[$level]['surname'] = $shuffled;
+        }
+    }
+
+    print("<pre>" . print_r($multiArray, true) . "</pre>");
+
+    echo "<br/>";
+    # 8. Task ##############
+    echo '<b>8.</b>';
 
 
     ?>
