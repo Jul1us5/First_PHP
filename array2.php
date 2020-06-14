@@ -16,7 +16,7 @@
     # 1. Task ##############
     echo '<b>1. </b>';
 
-    $array = range(1, 10);
+    $array = range(0, 9);
     $innerArray = range(1, 5);
     $multiArray = array();
     $kiek = 0;
@@ -129,7 +129,7 @@
     # 5. Task ##############
     echo '<b>5.</b>';
 
-    $array = range(1, 30);
+    $array = range(0, 29);
     $multiArray = array();
 
     foreach ($array as $level) {
@@ -168,7 +168,7 @@
     # 7. Task ##############
     echo '<b>7.</b>';
 
-    $array = range(1, 30);
+    $array = range(0, 29);
     $multiArray = array();
 
     $length = 3;
@@ -201,6 +201,25 @@
     # 8. Task ##############
     echo '<b>8.</b>';
 
+    $newArray = [];
+    $array = range(0, 9);
+    $multiArray = array();
+    foreach ($array as $level) {
+        $ret[$level] = array();
+        $kiek = rand(0, 5);;
+        $innerArray = range(0, $kiek);
+        foreach ($innerArray as $key => $level2) {
+            if($kiek == 0) {
+                $nera = rand(1,10);
+               echo $multiArray[$level][] =  "$nera <b><</b> Masyvas kurio indexas 0 ir reikšmė nuo 1 iki 10";
+            } else {
+                $lvl = rand(0, 10);
+                $multiArray[$level][] = $lvl;
+            }
+        }
+    }
+
+    print("<pre>" . print_r($multiArray, true) . "</pre>");
 
     ?>
 </body>
