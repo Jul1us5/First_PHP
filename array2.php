@@ -204,6 +204,7 @@
     $newArray = [];
     $array = range(0, 9);
     $multiArray = array();
+    $suma = 0;
     foreach ($array as $level) {
         $ret[$level] = array();
         $kiek = rand(0, 5);;
@@ -211,15 +212,45 @@
         foreach ($innerArray as $key => $level2) {
             if($kiek == 0) {
                 $nera = rand(1,10);
-               echo $multiArray[$level][] =  "$nera <b><</b> Masyvas kurio indexas 0 ir reikšmė nuo 1 iki 10";
+                $multiArray[$level][$nera] = "Masyvas nieko neturi";
+                $suma += $nera;
             } else {
                 $lvl = rand(0, 10);
                 $multiArray[$level][] = $lvl;
+                $suma += $lvl;
+                
             }
+            
+            
         }
+        
+        if($suma > 10) {
+            $multiArray[$level]['suma'] = $suma;
+            $suma = 0;
+        } else {
+            $multiArray[$level]['suma'] = $suma  . " indexo reikšmė";
+            $suma = 0;
+        }
+        
     }
 
     print("<pre>" . print_r($multiArray, true) . "</pre>");
+
+
+    echo "<br/>";
+    # 9. Task ##############
+    echo '<b>9.</b>';
+
+    function suma($a, $b)
+    {
+        return strnatcmp($b['suma'], $a['suma']);
+    }
+   
+    usort($multiArray, 'suma');
+    $a = array_reverse($multiArray);
+    
+    print("<pre>" . print_r($a, true) . "</pre>");
+
 
     ?>
 </body>
