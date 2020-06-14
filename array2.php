@@ -11,21 +11,18 @@
         word-break: break-all;
         box-sizing: border-box;
     }
-
     .edges {
         display: inline-block;
         width: 170px;
         height: 170px;
         margin-left: calc(50% - 60px);
     }
-
     .symbol {
         display: inline-block;
         width: 15px;
         text-align: center;
         height: 15px;
         margin: 1px;
-
     }
 </style>
 
@@ -42,15 +39,38 @@
     $array = range(0, 9);
     $innerArray = range(1, 5);
     $multiArray = array();
+    $newArray = [];
+    $suma = 0;
     $kiek = 0;
+    $steps = 0;
+    $index0 = 0;
+    $index1 = 0;
+    $index2 = 0;
+    $index3 = 0;
+    $index4 = 0;
+
     foreach ($array as $level) {
         $ret[$level] = array();
         foreach ($innerArray as $level2) {
             $lvl = rand(5, 25);
             if ($lvl > 10) $kiek++;
             $multiArray[$level][] = $lvl;
+
+            if($level == $steps) {
+                $suma += $lvl;
+                $newArray[$level] = $suma;
+                
+            }
+            if($level2 == 1) $index0 += $lvl;
+            if($level2 == 2) $index1 += $lvl;
+            if($level2 == 3) $index2 += $lvl;
+            if($level2 == 4) $index3 += $lvl;
+            if($level2 == 5) $index4 += $lvl;     
         }
+        $suma = 0;
+        $steps++;
     }
+
 
     print("<pre>" . print_r($multiArray, true) . "</pre>");
 
@@ -67,39 +87,6 @@
     }
     echo "<b> a:</b> Daugiau už 10 yra <b>| $kiek</b> skaičiai<br/>";
     echo "$space<b> b:</b> Didžiausias skaičius: <b>| $skaicius</b><br/>";
-
-    $index0 = 0;
-    $index1 = 0;
-    $index2 = 0;
-    $index3 = 0;
-    $index4 = 0;
-
-    $carry = 0;
-    $index0 = array_reduce($multiArray, function ($carry, $item) {
-        $carry += $item[0];
-        return $carry;
-    });
-    $carry = 0;
-    $index1 = array_reduce($multiArray, function ($carry, $item) {
-        $carry += $item[1];
-        return $carry;
-    });
-    $carry = 0;
-    $index2 = array_reduce($multiArray, function ($carry, $item) {
-        $carry += $item[2];
-        return $carry;
-    });
-    $carry = 0;
-    $index3 = array_reduce($multiArray, function ($carry, $item) {
-        $carry += $item[3];
-        return $carry;
-    });
-    $carry = 0;
-    $index4 = array_reduce($multiArray, function ($carry, $item) {
-        $carry += $item[4];
-        return $carry;
-    });
-
     echo "$space<b> c:</b> index 0 suma: <b>$index0 </b><br/>";
     echo "$space $space index 1 suma: <b>$index1 </b><br/>";
     echo "$space $space index 2 suma: <b>$index2 </b><br/>";
@@ -116,7 +103,9 @@
         }
     }
     print("<pre>" . print_r($multiArray, true) . "</pre>");
-    echo "$space<b> e: !!!!!!!!!!</b><br/>";
+    echo "$space<b> e: </b><br/>";
+
+    print("<pre>" . print_r($newArray, true) . "</pre>");
 
     echo "<br/>";
     # 3. Task ##############
