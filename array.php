@@ -249,6 +249,16 @@
     # 10. Task ##############
     echo '<b>10. </b>';
 
+    $array = [];
+    $suma = 0;
+    array_push($array, rand(5, 25));
+    array_push($array, rand(5, 25));
+    for($i = 0; $i < 8; $i++) {    
+            $suma = $array[$i] + $array[$i+1];
+            array_push($array, $suma);
+    }
+    print("<pre>" . print_r($array, true) . "</pre>");
+
 
     ?>
 
