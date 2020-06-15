@@ -61,7 +61,35 @@
     echo '<b>4.</b>';
 
 
-    
+    function number($number)
+    {
+        if (is_float($number) == false) {
+            $kiek = 0;
+            for ($i = 1; $i < $number; $i++) {
+                if ($number % $i == 0) {
+                    if ($i == 1) {
+                        continue;
+                    } else {
+                        $kiek++;
+                    }
+                }
+            }
+            if ($kiek > 0) {
+                echo " Skaičius: <b>$number</b> dalijasi be liekanos (išskyrus vienetą ir patį save) <b>$kiek</b> kartus.";
+                echo "<br/>";
+            } else {
+                echo " Skaičius: <b>$number</b> nesidalina.. ";
+            }
+        } else {
+            echo " <b>Galima įvesti tik sveiką skaičių :)</b>";
+        }
+    }
+
+    echo number(10);
+
+    echo "<br/>";
+    # 5. Task ##############
+    echo '<b>5.</b>';
 
     ?>
 </body>
