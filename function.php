@@ -39,7 +39,30 @@
     # 3. Task ##############
     echo '<b>3.</b>';
 
+    $random = rand(1, 6);
+    $string = substr(str_shuffle("qwertyuiopasdfghjklzxcvbnm"), 0, $random);
+    echo md5($string);
+    echo "<br/>";
+    echo "<br/>";
+    $n = md5($string); // Numbers
+    for ($i = 0; $i < strlen($n); $i++) {
+        $wrap = 0;
+        if (is_numeric($n[$i])) {
+            $wrap += $n[$i];
+            echo tags($wrap, '2');
+        } else {
+            echo $n[$i];
+        }
+    }
+
+    echo "<br/>";
+    echo "<br/>";
+    # 4. Task ##############
+    echo '<b>4.</b>';
+
+
     
+
     ?>
 </body>
 
