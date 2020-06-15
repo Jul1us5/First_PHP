@@ -238,7 +238,7 @@
 
     $newArray = [];
     $kiek = 0;
-    foreach ($array1 as $key => $value1) {   
+    foreach ($array1 as $key => $value1) {
         $newArray[$value1] = $array2[$kiek];
         $kiek++;
     }
@@ -253,12 +253,63 @@
     $suma = 0;
     array_push($array, rand(5, 25));
     array_push($array, rand(5, 25));
-    for($i = 0; $i < 8; $i++) {    
-            $suma = $array[$i] + $array[$i+1];
-            array_push($array, $suma);
+    for ($i = 0; $i < 8; $i++) {
+        $suma = $array[$i] + $array[$i + 1];
+        array_push($array, $suma);
     }
     print("<pre>" . print_r($array, true) . "</pre>");
 
+    echo "<br/>";
+    echo "<br/>";
+    # 11. Task ##############
+    echo '<b>11. </b>';
+
+    $array = [];
+    $same = 0;
+    $first = [];
+    $second = [];
+    $sortedArray = [];
+    $length = 101;
+
+    for ($i = 0; $i < $length + $same; $i++) {
+        $random = mt_rand(0, 300);
+        if (in_array($random, $array)) $same++;
+        else array_push($array, $random);
+        $max = max($array);
+    }
+        sort($array);
+    $pirmas = 0;
+    $antras = 0;
+    foreach ($array as $key => $value) {
+        $max = max($array);
+
+        if ($key % 2 == 0) {
+            array_push($first, $value);
+            if($value < $max) {
+                $pirmas += $value;
+            } else {
+                $pirmas += $value;
+            }
+            
+        } else {
+            array_push($second, $value);
+            if($max) {
+                $antras += $value;
+            }
+        }
+    }
+
+    $pirmas = $pirmas - $max;
+    echo "Link pradžios: $pirmas<br/>";
+    echo "Link pabaigos: $antras<br/>";
+    echo "Didžiausia reikšmė: $max<br/>";
+    echo "Skirtumas: " . ($antras - $pirmas);
+
+    sort($first);
+    rsort($second);
+
+    $sortedArray = array_merge($first, $second);
+    print("<pre>" . print_r($sortedArray, true) . "</pre>");
 
     ?>
 

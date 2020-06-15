@@ -11,15 +11,18 @@
         word-break: break-all;
         box-sizing: border-box;
     }
+
     .edges {
         display: inline-block;
         width: 170px;
         height: 170px;
         margin-left: calc(50% - 60px);
     }
+
     .symbol {
         display: inline-block;
         width: 15px;
+        line-height: 15px;
         text-align: center;
         height: 15px;
         margin: 1px;
@@ -36,6 +39,7 @@
     # 1. Task ##############
     echo '<b>1. </b>';
 
+
     $array = range(0, 9);
     $innerArray = range(1, 5);
     $multiArray = array();
@@ -48,24 +52,23 @@
     $index2 = 0;
     $index3 = 0;
     $index4 = 0;
+    $r = 0; // Rounds
 
     foreach ($array as $level) {
         $ret[$level] = array();
         foreach ($innerArray as $level2) {
             $lvl = rand(5, 25);
+
             if ($lvl > 10) $kiek++;
             $multiArray[$level][] = $lvl;
+            if ($level == $steps) $suma += $lvl;
+            $newArray[$level] = $suma;
 
-            if($level == $steps) {
-                $suma += $lvl;
-                $newArray[$level] = $suma;
-                
-            }
-            if($level2 == 1) $index0 += $lvl;
-            if($level2 == 2) $index1 += $lvl;
-            if($level2 == 3) $index2 += $lvl;
-            if($level2 == 4) $index3 += $lvl;
-            if($level2 == 5) $index4 += $lvl;     
+            if ($level2 == 1) $index0 += $lvl;
+            if ($level2 == 2) $index1 += $lvl;
+            if ($level2 == 3) $index2 += $lvl;
+            if ($level2 == 4) $index3 += $lvl;
+            if ($level2 == 5) $index4 += $lvl;
         }
         $suma = 0;
         $steps++;
@@ -224,20 +227,13 @@
         foreach ($innerArray as $key => $level2) {
             if ($kiek == 0) {
                 $nera = rand(1, 10);
-                $multiArray[$level][$nera] = "Masyvas nieko neturi";
+                $multiArray[$level][$nera] = $nera;
                 $suma += $nera;
             } else {
                 $lvl = rand(0, 10);
                 $multiArray[$level][] = $lvl;
                 $suma += $lvl;
             }
-        }
-        if ($suma > 10) {
-            $multiArray[$level]['suma'] = $suma;
-            $suma = 0;
-        } else {
-            $multiArray[$level]['suma'] = $suma;
-            $suma = 0;
         }
     }
 
@@ -248,15 +244,13 @@
     # 9. Task ##############
     echo '<b>9.</b>';
 
-    function suma($a, $b)
-    {
-        return strnatcmp($b['suma'], $a['suma']);
+    usort($multiArray, 
+    function($a, $b){
+        return (is_array($a) ? array_sum($a) : $a) <=> (is_array($b) ? array_sum($b) : $b);
     }
+);
 
-    usort($multiArray, 'suma');
-    $reverse = array_reverse($multiArray);
-
-    print("<pre>" . print_r($reverse, true) . "</pre>");
+    print("<pre>" . print_r($multiArray, true) . "</pre>");
 
     echo "<br/>";
     # 10. Task ##############
@@ -288,9 +282,31 @@
         }
     }
     echo "</div>";
-
-
     print("<pre>" . print_r($multiArray, true) . "</pre>");
+
+    echo "<br/>";
+    # 11. Task ##############
+    echo '<b>11.</b>';
+
+    do {
+        $a = rand(0, 1000);
+        $b = rand(0, 1000);
+    } while ($a == $b);
+    $long = rand(10, 30);
+    $sk1 = $sk2 = 0;
+    echo '<h3>Skaičiai ' . $a . ' ir ' . $b . '</h3>';
+    $c = [];
+    for ($i = 0; $i < $long; $i++) {
+        $c[] = array_rand(array_flip([$a, $b]));
+    }
+    $skaiciai = array_sum($c);
+    $sk2 = ($skaiciai - $long * $a) / ($b - $a);
+    $sk1 = $long - $sk2;
+    echo '<h4>Masyvas:</h4>';
+    echo '<pre>';
+    print_r($c);
+    echo '</pre>';
+    echo '<h3>Skaičius ' . $a . '  yra pakartotas ' . $sk1 . ' kartų, o skaičius ' . $b . ' - ' . $sk2 . ' kartų.</h3>';
 
     ?>
 </body>
