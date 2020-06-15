@@ -49,7 +49,7 @@
 
     ];
 
-    print("<pre>" . print_r($masyvas) . "</pre>");
+    print("<pre>" . print_r($masyvas, true) . "</pre>");
 
 
     $array = range(0, 9);
@@ -239,20 +239,13 @@
         foreach ($innerArray as $key => $level2) {
             if ($kiek == 0) {
                 $nera = rand(1, 10);
-                $multiArray[$level][$nera] = "Masyvas nieko neturi";
+                $multiArray[$level][$nera] = $nera;
                 $suma += $nera;
             } else {
                 $lvl = rand(0, 10);
                 $multiArray[$level][] = $lvl;
                 $suma += $lvl;
             }
-        }
-        if ($suma > 10) {
-            $multiArray[$level]['suma'] = $suma;
-            $suma = 0;
-        } else {
-            $multiArray[$level]['suma'] = $suma;
-            $suma = 0;
         }
     }
 
@@ -263,15 +256,13 @@
     # 9. Task ##############
     echo '<b>9.</b>';
 
-    function suma($a, $b)
-    {
-        return strnatcmp($b['suma'], $a['suma']);
+    usort($multiArray, 
+    function($a, $b){
+        return (is_array($a) ? array_sum($a) : $a) <=> (is_array($b) ? array_sum($b) : $b);
     }
+);
 
-    usort($multiArray, 'suma');
-    $reverse = array_reverse($multiArray);
-
-    print("<pre>" . print_r($reverse, true) . "</pre>");
+    print("<pre>" . print_r($multiArray, true) . "</pre>");
 
     echo "<br/>";
     # 10. Task ##############
