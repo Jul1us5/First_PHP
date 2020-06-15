@@ -99,7 +99,7 @@
 
     }
 
-    function n($number)
+    function n($number) //  Funkciją, kuri skaičiuoja, iš kiek sveikų skaičių jos argumentas dalijasi be liekanos
     {
         if (is_float($number) == false) {
             $kiek = 0;
@@ -109,7 +109,7 @@
             if ($kiek > 0) return $kiek; else return 0;
         } else return 0; 
     }
-    
+
     usort($array, 
     function($b, $a){
         $a = n($a);
