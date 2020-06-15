@@ -76,22 +76,50 @@
             }
             if ($kiek > 0) {
                 echo " Skaičius: <b>$number</b> dalijasi be liekanos (išskyrus vienetą ir patį save) <b>$kiek</b> kartus.";
-                echo "<br/>";
             } else {
-                echo " Skaičius: <b>$number</b> nesidalina.. ";
+                echo " Pirminis skaičius | <b>$number</b>";
             }
         } else {
             echo " <b>Galima įvesti tik sveiką skaičių :)</b>";
         }
     }
+    echo number(11);
 
-    echo number(10);
-
+    echo "<br/>";
     echo "<br/>";
     # 5. Task ##############
     echo '<b>5.</b>';
+    echo "<br/>";
+
+     $array = [];
+    $size = 100;
+    for ($x = 1; $x <= $size; $x++) {
+        $rand = rand(33, 77);
+        array_push($array, $rand);
+
+    }
+
+    function n($number)
+    {
+        if (is_float($number) == false) {
+            $kiek = 0;
+            for ($i = 1; $i < $number; $i++) {
+                if ($number % $i == 0) if ($i == 1) continue; else $kiek++;                   
+            }
+            if ($kiek > 0) return $kiek; else return 0;
+        } else return 0; 
+    }
+    
+    usort($array, 
+    function($b, $a){
+        $a = n($a);
+        $b = n($b);
+        return (is_array($a) ? array_sum($a) : $a) <=> (is_array($b) ? array_sum($b) : $b);
+    }
+);
+    print("<pre>" . print_r($array, true) . "</pre>");
 
     ?>
 </body>
 
-</html>
+</html
