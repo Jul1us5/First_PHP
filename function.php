@@ -75,7 +75,7 @@
                 }
             }
             if ($kiek > 0) {
-                echo " Skaičius: <b>$number</b> dalijasi be liekanos (išskyrus vienetą ir patį save) <b>$kiek</b> kartus.";
+                echo " Skaičius: <b>$number</b> dalijasi be liekanos (išskyrus vienetą ir patį save) iš <b>$kiek</b> skaičiaus/ų";
             } else {
                 echo " Pirminis skaičius | <b>$number</b>";
             }
@@ -83,7 +83,7 @@
             echo " <b>Galima įvesti tik sveiką skaičių :)</b>";
         }
     }
-    echo number(11);
+    echo number(10);
 
     echo "<br/>";
     echo "<br/>";
@@ -91,12 +91,11 @@
     echo '<b>5.</b>';
     echo "<br/>";
 
-     $array = [];
+    $array = [];
     $size = 100;
     for ($x = 1; $x <= $size; $x++) {
         $rand = rand(33, 77);
         array_push($array, $rand);
-
     }
 
     function n($number) //  Funkciją, kuri skaičiuoja, iš kiek sveikų skaičių jos argumentas dalijasi be liekanos
@@ -104,19 +103,43 @@
         if (is_float($number) == false) {
             $kiek = 0;
             for ($i = 1; $i < $number; $i++) {
-                if ($number % $i == 0) if ($i == 1) continue; else $kiek++;                   
+                if ($number % $i == 0) if ($i == 1) continue;
+                else $kiek++;
             }
-            if ($kiek > 0) return $kiek; else return 0;
-        } else return 0; 
+            if ($kiek > 0) return $kiek;
+            else return 0;
+        } else return 0;
     }
 
-    usort($array, 
-    function($b, $a){
-        $a = n($a);
-        $b = n($b);
-        return (is_array($a) ? array_sum($a) : $a) <=> (is_array($b) ? array_sum($b) : $b);
+    usort(
+        $array,
+        function ($b, $a) {
+            $a = n($a);
+            $b = n($b);
+            return (is_array($a) ? array_sum($a) : $a) <=> (is_array($b) ? array_sum($b) : $b);
+        }
+    );
+    print("<pre>" . print_r($array, true) . "</pre>");
+
+    echo "<br/>";
+    echo "<br/>";
+    # 6. Task ##############
+    echo '<b>6. + Išrūšiuotas</b>';
+    echo "<br/>";
+
+    $array = [];
+    $size = 100;
+    for ($x = 1; $x <= $size; $x++) {
+        $rand = rand(333, 777);
+        if(n($rand) == 0) {
+            continue;
+        } else {
+            array_push($array, $rand); 
+        }
+        
+
     }
-);
+    sort($array);
     print("<pre>" . print_r($array, true) . "</pre>");
 
     ?>
