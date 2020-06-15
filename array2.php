@@ -39,18 +39,6 @@
     # 1. Task ##############
     echo '<b>1. </b>';
 
-    $masyvas = [
-
-        5,
-        [1, 2, 3],
-        2,
-        [4, 5, 6],
-        [7]
-
-    ];
-
-    print("<pre>" . print_r($masyvas, true) . "</pre>");
-
 
     $array = range(0, 9);
     $innerArray = range(1, 5);
