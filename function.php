@@ -83,7 +83,7 @@
             echo " <b>Galima įvesti tik sveiką skaičių :)</b>";
         }
     }
-    echo number(10);
+    echo number(71);
 
     echo "<br/>";
     echo "<br/>";
@@ -199,8 +199,43 @@
     echo "<br/>";
     # 9. Task ##############
     echo '<b>9. </b> ';
+    echo "<br/>";
+
+    $elementas = 3;
+    function add($elementas)
+    {
+        $array = [];
+        for ($i = 0; $i < $elementas; $i++) {
+            $random = rand(1, 33);
+            $array[$i] = $random;
+        }
+        $kiek = 0;
+        $arr = array_slice($array, -3, 3, true);
+        $elem = $elementas - count($arr);
+        for ($x = $elem; $x < $elementas; $x++) {
+
+            if (n($arr[$x]) >= 2) {
+                $kiek++;
+            }
+        }
+        if ($kiek >= 1) {
+            $elementas++;
+            array_push($array, $random);
+            return add($elementas);
+        }
+        return $array;
+    }
+
+    $array = add($elementas);
+    print("<pre>" . print_r($array, true) . "</pre>");
+    echo "<br/>";
+
+    echo "<br/>";
+    echo "<br/>";
+    # 10. Task ##############
+    echo '<b>10. </b> ';
 
     ?>
 </body>
 
-</html
+</html>
