@@ -83,7 +83,7 @@
             echo " <b>Galima įvesti tik sveiką skaičių :)</b>";
         }
     }
-    echo number(71);
+    echo number(9);
 
     echo "<br/>";
     echo "<br/>";
@@ -106,8 +106,9 @@
                 if ($number % $i == 0) if ($i == 1) continue;
                 else $kiek++;
             }
-            if ($kiek > 0) return $kiek;
-            else return 0;
+            // if ($kiek > 0) return $kiek;
+            // else return 0;
+            return $kiek;
         } else return 0;
     }
 
@@ -214,7 +215,7 @@
         $elem = $elementas - count($arr);
         for ($x = $elem; $x < $elementas; $x++) {
 
-            if (n($arr[$x]) >= 2) {
+            if (n($arr[$x]) >= 1) {
                 $kiek++;
             }
         }
