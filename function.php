@@ -131,16 +131,56 @@
     $size = 100;
     for ($x = 1; $x <= $size; $x++) {
         $rand = rand(333, 777);
-        if(n($rand) == 0) {
+        if (n($rand) == 0) {
             continue;
         } else {
-            array_push($array, $rand); 
+            array_push($array, $rand);
         }
-        
-
     }
     sort($array);
     print("<pre>" . print_r($array, true) . "</pre>");
+
+    echo "<br/>";
+    echo "<br/>";
+    # 7. Task ##############
+    echo '<b>7. </b>';
+    echo "<br/>";
+
+
+
+    $levels = rand(10, 30);
+    function multidimensional($levels)
+    {
+        static $lvlCount = 0;
+        $lvlCount++;
+        $array = [];
+        $randomNumber = rand(10, 20);
+        for ($i = 0; $i < $randomNumber; $i++) {
+            if (($i + 1) == $randomNumber) {
+                if ($lvlCount >= $levels) {
+                    array_push($array, 0);
+                } else {
+                    $inner = multidimensional($levels);
+                    array_push($array, $inner);
+                }
+            } else {
+                array_push($array, rand(0, 10));
+            }
+        }
+        return  $array;
+    }
+    $multi = multidimensional($levels);
+    echo '<br>';
+    print("<pre>" . print_r($multi, true) . "</pre>");
+    echo '<br>';
+    echo '<br>';
+
+    echo "<br/>";
+    echo "<br/>";
+    # 8. Task ##############
+    echo '<b>8. </b>';
+    echo "<br/>";
+
 
     ?>
 </body>
