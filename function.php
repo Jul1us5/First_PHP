@@ -178,9 +178,27 @@
     echo "<br/>";
     echo "<br/>";
     # 8. Task ##############
-    echo '<b>8. </b>';
-    echo "<br/>";
+    echo '<b>8. </b> ';
 
+    function suma($array)
+    {
+        static $suma = 0;
+        foreach ($array as $val) {
+            if (is_array($val)) {
+                suma($val);
+            } else {
+                $suma += $val;
+            }
+        }
+        return $suma;
+    }
+
+    echo "Suma: <b>" . suma($multi) . "</b>";
+
+    echo "<br/>";
+    echo "<br/>";
+    # 9. Task ##############
+    echo '<b>9. </b> ';
 
     ?>
 </body>
