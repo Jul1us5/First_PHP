@@ -83,7 +83,7 @@
             echo " <b>Galima įvesti tik sveiką skaičių :)</b>";
         }
     }
-    echo number(9);
+    echo number(10);
 
     echo "<br/>";
     echo "<br/>";
@@ -106,11 +106,10 @@
                 if ($number % $i == 0) if ($i == 1) continue;
                 else $kiek++;
             }
-            // if ($kiek > 0) return $kiek;
-            // else return 0;
             return $kiek;
         } else return 0;
     }
+
 
     usort(
         $array,
@@ -165,7 +164,7 @@
                     array_push($array, $inner);
                 }
             } else {
-                array_push($array, rand(0, 10));
+                array_push($array, rand(1, 10));
             }
         }
         return  $array;
@@ -207,14 +206,13 @@
     {
         $array = [];
         for ($i = 0; $i < $elementas; $i++) {
-            $random = rand(1, 33);
+            $random = rand(2, 10);
             $array[$i] = $random;
         }
         $kiek = 0;
         $arr = array_slice($array, -3, 3, true);
         $elem = $elementas - count($arr);
         for ($x = $elem; $x < $elementas; $x++) {
-
             if (n($arr[$x]) >= 1) {
                 $kiek++;
             }
@@ -226,7 +224,6 @@
         }
         return $array;
     }
-
     $array = add($elementas);
     print("<pre>" . print_r($array, true) . "</pre>");
     echo "<br/>";
@@ -235,6 +232,23 @@
     echo "<br/>";
     # 10. Task ##############
     echo '<b>10. </b> ';
+    echo "<br/>";
+    $array = range(0, 9);
+    $innerArray = range(0, 9);
+    $multiArray = array();
+    $suma = 0;
+    $steps = 0;
+    foreach ($array as $level) {
+        $steps++;
+        foreach ($innerArray as $key => $level2) {
+            $lvl = rand(1, 100);
+            $multiArray[$level][] = $lvl;
+            
+        }
+
+    }
+     
+  print("<pre>" . print_r($multiArray, true) . "</pre>");
 
     ?>
 </body>
