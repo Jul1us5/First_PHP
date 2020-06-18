@@ -26,11 +26,11 @@
 
     $space = "&nbsp;&nbsp;&nbsp;";
 
-    if (!empty($_GET) && isset($_GET['redirect'])) {
+    if (!empty($_GET) && isset($_GET['red'])) {
         header("Location: http://192.168.64.2/PHP/First_PHP/web/blue.php");
         die();
     }
-    echo '<a href="./red.php?redirect=true">red.php</a><br>';
+    echo '<a href="./red.php?red">red.php</a><br>';
 
 
 
