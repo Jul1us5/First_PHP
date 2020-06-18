@@ -95,6 +95,8 @@
     echo "<br/>";
     echo "<br/>";
 
+    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/lemon.php">lemon.php</a>' . "<br/>";
+
 
 
 
