@@ -97,6 +97,15 @@
 
     echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/lemon.php">lemon.php</a>' . "<br/>";
 
+    echo "<br/>";
+    # 5. Task ##############
+    echo $space . '<b>5. </b>';
+
+    echo "<br/>";
+    echo "<br/>";
+    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/blue.php">blue.php</a>' . "<br/>";
+    echo "<br/>";
+    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/red.php">red.php</a>' . "<br/>";
 
 
 
