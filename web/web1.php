@@ -38,17 +38,20 @@
     echo "<br/>";
 
 
-    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/web1.php">web1.php</a>' . " ( BE )<br/>";
+    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/web1.php">Linkas</a>' . " ( BE )<br/>";
     echo "<br/>";
-    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/web1.php?color=1">web1.php</a>' . " ( SU )<br/>";
+    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/web1.php?color=1">Linkas</a>' . " ( SU )<br/>";
+
+
 
     if (isset($_GET['color'])) {
-        if($_GET['color'] == 1) {
-            echo "<style>
-            .box {
-                background-color: red;
-            }
-         </style>";
+        if ($_GET['color'] == 1) {
+            echo 
+                "<style>
+                    .box {
+                        background-color: red;
+                    }
+                </style>";
         }
     }
 
@@ -61,10 +64,19 @@
 
     echo "<br/>";
     echo "<br/>";
-    echo "<br/>";
-    echo "<br/>";
 
-    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/web1.php?color=">web1.php</a>' . "<br/>";
+    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/web1.php?color=">Linkas</a>' . " (Spalvą įvesti linke)<br/>";
+
+    if (isset($_GET['color'])) {
+        $color = $_GET['color'];
+
+            echo    
+                "<style>
+                    .box {
+                        background-color: #$color;
+                    }
+                </style>";
+    }
 
 
 
