@@ -14,8 +14,8 @@
 
     .box {
         display: inline-block;
-        width: 1200px;
-        height: 120px;
+        width: 1000px;
+        height: 1000px;
         float: right;
         background-color: black;
     }
@@ -46,7 +46,7 @@
 
     if (isset($_GET['color'])) {
         if ($_GET['color'] == 1) {
-            echo 
+            echo
                 "<style>
                     .box {
                         background-color: red;
@@ -69,14 +69,31 @@
 
     if (isset($_GET['color'])) {
         $color = $_GET['color'];
-
-            echo    
-                "<style>
+            echo
+            "<style>
                     .box {
                         background-color: #$color;
                     }
                 </style>";
     }
+    echo "<br/>";
+    # 3. Task ##############
+    echo $space . '<b>3. </b>';
+
+    echo "<br/>";
+    echo "<br/>";
+
+
+    echo '<form action="" method="get">';
+    echo $space . '#' . '<input type="text" name="color" maxlength="6">';
+    echo '</form>';
+
+    echo "<br/>";
+    # 4. Task ##############
+    echo $space . '<b>4. </b>';
+
+    echo "<br/>";
+    echo "<br/>";
 
 
 
