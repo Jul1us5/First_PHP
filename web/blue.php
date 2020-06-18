@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,18 +13,24 @@
     body {
         background-color: blue;
     }
+    a {
+        color: black;
+        text-decoration: none;
+    }
 </style>
 
 <body>
     <?php
-    session_start();
 
     // Setting
 
     $space = "&nbsp;&nbsp;&nbsp;";
 
-
-    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/red.php">blue.php</a>' . "<br/>";
+    if (!empty($_GET) && isset($_GET['redirect'])) {
+        header("Location: http://192.168.64.2/PHP/First_PHP/web/red.php");
+        die();
+    }
+    echo '<a href="./blue.php?redirect=true">blue.php</a><br>';
 
 
 

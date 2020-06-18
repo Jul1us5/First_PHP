@@ -99,7 +99,7 @@
 
     echo "<br/>";
     # 5. Task ##############
-    echo $space . '<b>5. </b>';
+    echo $space . '<b>5. ( Atskiri failai su atitinkamais pavadinimais )</b>';
 
     echo "<br/>";
     echo "<br/>";
