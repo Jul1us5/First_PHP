@@ -52,9 +52,9 @@
     echo "<br/>";
 
 
-    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/web1.php">Linkas</a>' . " ( BE )<br/>";
+    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/WEB.php">Linkas</a>' . " ( BE )<br/>";
     echo "<br/>";
-    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/web1.php?color=1">Linkas</a>' . " ( SU )<br/>";
+    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/WEB.php?color=1">Linkas</a>' . " ( SU )<br/>";
 
 
 
@@ -79,7 +79,7 @@
     echo "<br/>";
     echo "<br/>";
 
-    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/web1.php?color=">Linkas</a>' . " (Spalvą įvesti linke)<br/>";
+    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/WEB.php?color=">Linkas</a>' . " (Spalvą įvesti linke)<br/>";
 
     if (isset($_GET['color'])) {
         $color = $_GET['color'];
@@ -130,7 +130,7 @@
     echo '<a href="./red.php?red">red.php</a><br>';
 
     echo "<br/>";
-    # 6. Task ##############
+    # 6. and 7. Task ##############
     echo $space . '<b>6. ir 7. </b>';
 
     echo "<br/>";
@@ -158,15 +158,13 @@
     echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/pink.php">Linkas į Pink.php</a>' . "<br/>";
 
     echo "<br/>";
-    # 9. Task ##############
-    echo $space . '<b>9. </b>';
+    # 9. and 10. Task ##############
+    echo $space . '<b>9. ir 10.</b>';
 
     echo "<br/>";
     echo "<br/>";
 
-    
-
-
+    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/black.php">Linkas į Black page</a>' . "<br/>";
 
 
     ?>
