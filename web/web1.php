@@ -131,17 +131,16 @@
 
     echo "<br/>";
     # 6. Task ##############
-    echo $space . '<b>6. </b>';
+    echo $space . '<b>6. ir 7. </b>';
 
     echo "<br/>";
     echo "<br/>";
-
 
     echo '<form action="" method="get">';
     echo $space . '<button type="submit">GET</button>';
     echo '</form>';
 
-    echo '<form action="" method="post">';
+    echo '<form action="?color=yellow" method="post">';
     echo $space . '<button type="submit">POST</button>';
     echo '</form>';
 
@@ -151,8 +150,8 @@
 
 
     echo "<br/>";
-    # 7. Task ##############
-    echo $space . '<b>7. </b>';
+    # 8. Task ##############
+    echo $space . '<b>8. </b>';
 
     echo "<br/>";
     echo "<br/>";
