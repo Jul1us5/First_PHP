@@ -166,7 +166,19 @@
 
     echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/black.php">Linkas į Black page</a>' . "<br/>";
 
+    echo "<br/>";
+    # 11 Task ##############
+    echo $space . '<b>11.</b>';
 
+    echo "<br/>";
+    echo "<br/>";
+
+    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/game.php">Linkas į Žaidimą</a>' . "<br/>";
+
+    echo "<br/>";
+    echo "<br/>";
+    echo "<br/>";
+    echo "<br/>";
     ?>
 </body>
 
