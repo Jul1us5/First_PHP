@@ -11,7 +11,7 @@
 
 <style>
     body {
-        background-color: blue;
+        background-color: red;
     }
     a {
         color: black;

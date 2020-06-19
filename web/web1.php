@@ -15,9 +15,23 @@
     .box {
         display: inline-block;
         width: 1000px;
-        height: 1000px;
+        height: 550px;
         float: right;
         background-color: black;
+    }
+
+    .green {
+        display: inline-block;
+        width: 100%;
+        height: 150px;
+        background-color: green;
+    }
+
+    .yellow {
+        display: inline-block;
+        width: 100%;
+        height: 150px;
+        background-color: yellow;
     }
 </style>
 
@@ -69,7 +83,7 @@
 
     if (isset($_GET['color'])) {
         $color = $_GET['color'];
-            echo
+        echo
             "<style>
                     .box {
                         background-color: #$color;
@@ -103,9 +117,56 @@
 
     echo "<br/>";
     echo "<br/>";
-    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/blue.php">blue.php</a>' . "<br/>";
+    if (!empty($_GET) && isset($_GET['blue'])) {
+        header("Location: http://192.168.64.2/PHP/First_PHP/web/red.php");
+        die();
+    }
+    echo '<a href="./blue.php?blue">blue.php</a><br>';
     echo "<br/>";
-    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/red.php">red.php</a>' . "<br/>";
+    if (!empty($_GET) && isset($_GET['red'])) {
+        header("Location: http://192.168.64.2/PHP/First_PHP/web/blue.php");
+        die();
+    }
+    echo '<a href="./red.php?red">red.php</a><br>';
+
+    echo "<br/>";
+    # 6. Task ##############
+    echo $space . '<b>6. </b>';
+
+    echo "<br/>";
+    echo "<br/>";
+
+
+
+
+
+
+
+    echo '<form action="" method="get">';
+    echo $space . '<button type="submit">GET</button>';
+    echo '</form>';
+
+
+    echo '<form action="" method="post">';
+    echo $space . '<button type="submit">POST</button>';
+    echo '</form>';
+
+    $method = $_SERVER['REQUEST_METHOD'];
+    if ($method == 'POST') echo "<div class='yellow'></div>";
+    if ($method == 'GET') echo "<div class='green'></div>";
+
+
+    echo "<br/>";
+    # 7. Task ##############
+    echo $space . '<b>7. </b>';
+
+    echo "<br/>";
+    echo "<br/>";
+
+
+
+
+
 
 
 
