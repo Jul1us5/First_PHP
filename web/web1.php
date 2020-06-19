@@ -137,15 +137,9 @@
     echo "<br/>";
 
 
-
-
-
-
-
     echo '<form action="" method="get">';
     echo $space . '<button type="submit">GET</button>';
     echo '</form>';
-
 
     echo '<form action="" method="post">';
     echo $space . '<button type="submit">POST</button>';
