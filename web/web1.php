@@ -155,10 +155,16 @@
 
     echo "<br/>";
     echo "<br/>";
+    echo $space . '<a href="http://192.168.64.2/PHP/First_PHP/web/pink.php">Linkas į Pink.php</a>' . "<br/>";
 
+    echo "<br/>";
+    # 9. Task ##############
+    echo $space . '<b>9. </b>';
 
+    echo "<br/>";
+    echo "<br/>";
 
-
+    
 
 
 
