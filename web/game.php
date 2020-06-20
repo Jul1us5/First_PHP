@@ -23,7 +23,9 @@
         background-color: paleturquoise;
         border: 1px solid black;
         border-radius: 10px;
+
     }
+
     .title {
         display: inline-block;
         width: 500px;
@@ -35,14 +37,19 @@
         font-size: 30px;
         font-weight: bold;
     }
+
     .input {
         display: inline-block;
-        width: 30%;
+        width: 100%;
+        float: left;
         height: 40px;
-        margin-left: 60px;
         text-align: center;
-        padding-top: 20px;
     }
+
+    .input:first-of-type {
+        padding-top: 100px;
+    }
+
     .submit {
         display: inline-block;
         width: 500px;
@@ -50,30 +57,59 @@
         margin-top: 20px;
         margin-left: calc(50% - 40px);
     }
+
+    img {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        margin-left: 5px;
+        margin-top: 2.5px;
+    }
 </style>
 
 <body>
     <?php
 
+    $first = '';
+    $second = '';
+
+    if (isset($_POST['first']) && !empty($_POST['first'])) {
+        $first = $_POST['first'];
+    }
+    if (isset($_POST['second']) && !empty($_POST['second'])) {
+        $second = $_POST['second'];
+    }
+
     echo "<div class='title'>Žaidimas - Mesk Kauliuką</div>";
     echo "<div class='wrap'>";
-    echo '<form action="" method="get">';
-
+    echo '<form action="" method="post" accept-charset="utf-8">';
 
     echo "<div class='input'>";
-    echo '1. Player: <input type="text">';
+    echo '1. Player: <input type="text" name="first"> ';
+    if ($first == null) {
+        echo '<img src="https://image.flaticon.com/icons/png/512/1828/1828665.png">';
+    } else {
+        echo '<img src="https://image.flaticon.com/icons/svg/1632/1632596.svg">';
+    }
     echo "</div>";
 
     echo "<div class='input'>";
-    echo '2. Player: <input type="text">';
+    echo '2. Player: <input type="text" name="second">';
+    if($second == null) {
+        echo '<img src="https://image.flaticon.com/icons/png/512/1828/1828665.png">';
+    } else {
+        echo '<img src="https://image.flaticon.com/icons/svg/1632/1632596.svg">';
+    }
     echo "</div>";
 
     echo "<div class='submit'>";
     echo '<button type="submit">Pradėti</button>';
     echo "</div>";
-    
+
     echo '</form>';
     echo "</div>";
+
 
 
     ?>
