@@ -7,5 +7,5 @@
 5. Multidimensional Arrays
 6. Function
 7. WEB (background edition)
-8. Game
+8. Game | in progress
 # break;
